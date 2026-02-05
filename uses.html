@@ -21,7 +21,6 @@
         <div style="display: flex; gap: 24px; font-size: 14px; font-weight: 500;">
             <a href="/" style="text-decoration: none; color: var(--text-primary);">Home</a>
             <a href="/projects.html" style="text-decoration: none; color: var(--text-primary);">Projects</a>
-            <a href="/blog.html" style="text-decoration: none; color: var(--text-primary);">Blog</a>
             <a href="/uses.html" style="text-decoration: none; color: var(--accent-blue);">Uses</a>
             <a href="/resume.html" style="text-decoration: none; color: var(--text-primary);">Resume</a>
         </div>
@@ -70,6 +69,12 @@
         async function loadUses() {
             const res = await fetch('./user.json');
             const data = await res.json();
+
+            // Set footer links
+            document.getElementById('footer-github').href = `https://github.com/${data.contact.github || ''}`;
+            document.getElementById('footer-linkedin').href = data.contact.linkedin;
+            document.getElementById('footer-twitter').href = data.contact.twitter;
+            document.getElementById('footer-instagram').href = data.contact.instagram;
 
             const hwContainer = document.getElementById('hardware-list');
             hwContainer.innerHTML = data.uses.hardware.map(item => `

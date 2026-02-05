@@ -91,12 +91,12 @@ const loadUserData = async () => {
         }
 
         // Populate Global Footer Socials
-        if (data.contact && data.contact.socials) {
-            const socials = data.contact.socials;
-            if (document.getElementById('footer-github')) document.getElementById('footer-github').href = socials.github || '#';
-            if (document.getElementById('footer-linkedin')) document.getElementById('footer-linkedin').href = socials.linkedin || '#';
-            if (document.getElementById('footer-twitter')) document.getElementById('footer-twitter').href = socials.twitter || '#';
-            if (document.getElementById('footer-instagram')) document.getElementById('footer-instagram').href = socials.instagram || '#';
+        if (data.contact) {
+            const contact = data.contact;
+            if (document.getElementById('footer-github')) document.getElementById('footer-github').href = contact.github ? `https://github.com/${contact.github}` : '#';
+            if (document.getElementById('footer-linkedin')) document.getElementById('footer-linkedin').href = contact.linkedin || '#';
+            if (document.getElementById('footer-twitter')) document.getElementById('footer-twitter').href = contact.twitter || '#';
+            if (document.getElementById('footer-instagram')) document.getElementById('footer-instagram').href = contact.instagram || '#';
         }
 
         // Initialize Lucide icons after dynamic content is loaded
