@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume | Rifat Ahsan Pulok</title>
+    <meta name="description" content="Resume of Rifat Ahsan Pulok - CS Student and Software Engineer.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="./index.css">
+    <style>
+        @media print {
+            @page {
+                size: A4;
+                margin: 0;
+            }
+
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            body {
+                background: white !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                width: 210mm;
+                height: 297mm;
+                overflow: hidden;
+                visibility: hidden;
+            }
+
+            nav,
+            footer,
+            .no-print,
+            .global-footer {
+                display: none !important;
+            }
+
+            main,
+            .container,
+            section {
+                margin: 0 !important;
+                padding: 0 !important;
+                max-width: none !important;
+                visibility: visible !important;
+            }
+
+            #resume-content {
+                visibility: visible !important;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 210mm !important;
+                height: 297mm !important;
+                margin: 0 !important;
+                padding: 10mm !important;
+                background: white !important;
+                border: none !important;
+                box-shadow: none !important;
+                border-radius: 0 !important;
+                transform: none !important;
+                overflow: hidden !important;
+            }
+
+            #resume-content section {
+                padding: 0 !important;
+                margin-bottom: 8px !important;
+            }
+        }
+
+        #resume-content section {
+            padding: 0;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="glass-panel no-print"
+        style="position: sticky; top: 20px; z-index: 1000; margin: 20px auto; max-width: 800px; padding: 12px 24px; border-radius: 980px; display: flex; justify-content: space-between; align-items: center;">
+        <a href="/"
+            style="text-decoration: none; color: var(--text-primary); font-weight: 600; letter-spacing: -0.5px;">RP</a>
+        <div style="display: flex; gap: 24px; font-size: 14px; font-weight: 500;">
+            <a href="/" style="text-decoration: none; color: var(--text-primary);">Home</a>
+            <a href="/projects.html" style="text-decoration: none; color: var(--text-primary);">Projects</a>
+            <a href="/blog.html" style="text-decoration: none; color: var(--text-primary);">Blog</a>
+            <a href="/uses.html" style="text-decoration: none; color: var(--text-primary);">Uses</a>
+            <a href="/resume.html" style="text-decoration: none; color: var(--accent-blue);">Resume</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section style="padding: 10px 0;">
+            <div id="resume-content" class="glass-panel animate-fade-in"
+                style="width: 210mm; max-width: 100%; height: 297mm; margin: 0 auto; padding: 25mm; background: white; border-radius: 8px; overflow: hidden; position: relative;">
+                <!-- Header -->
+                <header
+                    style="border-bottom: 2px solid #000; padding-bottom: 6px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: flex-end;">
+                    <div>
+                        <h1 id="user-name"
+                            style="font-size: 30px; font-weight: 700; margin-bottom: 0px; color: #000; letter-spacing: -1px;">
+                            Rifat Ahsan Pulok</h1>
+                        <p id="user-role" style="font-size: 15px; color: var(--accent-blue); font-weight: 600;">CS
+                            Undergrad & Software Engineer</p>
+                    </div>
+                    <div style="text-align: right; font-size: 11px; line-height: 1.3;">
+                        <p id="user-email" style="font-weight: 600;">hello@example.com</p>
+                        <p>Dhaka, Bangladesh</p>
+                        <p><a href="https://github.com"
+                                style="color: inherit; text-decoration: none; border-bottom: 1px solid #ccc;">github.com/rifatahsan</a>
+                        </p>
+                    </div>
+                </header>
+
+                <!-- Professional Summary -->
+                <section style="margin-bottom: 10px;">
+                    <h2
+                        style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; border-bottom: 1px solid #eee; padding-bottom: 3px; margin-bottom: 6px; color: #000; font-weight: 700;">
+                        Professional Summary</h2>
+                    <p style="font-size: 12px; line-height: 1.4; color: #333;">
+                        Highly motivated Computer Science undergraduate with a strong foundation in software
+                        architecture, full-stack development, and UI/UX design. Experienced in building scalable web
+                        applications and passionate about creating efficient, user-centric solutions.
+                    </p>
+                </section>
+
+                <!-- Skills -->
+                <section style="margin-bottom: 10px;">
+                    <h2
+                        style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; border-bottom: 1px solid #eee; padding-bottom: 3px; margin-bottom: 6px; color: #000; font-weight: 700;">
+                        Technical Skills</h2>
+                    <div id="skills-ats-container"
+                        style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 4px 16px; font-size: 11px;">
+                        <!-- Categorized skills -->
+                    </div>
+                </section>
+
+                <!-- Experience -->
+                <section style="margin-bottom: 10px;">
+                    <h2
+                        style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; border-bottom: 1px solid #eee; padding-bottom: 3px; margin-bottom: 6px; color: #000; font-weight: 700;">
+                        Work Experience</h2>
+                    <div id="experience-list" style="display: flex; flex-direction: column; gap: 8px;">
+                        <!-- Experience -->
+                    </div>
+                </section>
+
+                <!-- Projects -->
+                <section style="margin-bottom: 10px;">
+                    <h2
+                        style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; border-bottom: 1px solid #eee; padding-bottom: 3px; margin-bottom: 6px; color: #000; font-weight: 700;">
+                        Projects</h2>
+                    <div id="projects-mini-list" style="display: flex; flex-direction: column; gap: 8px;">
+                        <!-- Projects -->
+                    </div>
+                </section>
+
+                <!-- Education -->
+                <section style="margin-bottom: 10px;">
+                    <h2
+                        style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; border-bottom: 1px solid #eee; padding-bottom: 3px; margin-bottom: 6px; color: #000; font-weight: 700;">
+                        Education</h2>
+                    <div id="education-ats-container">
+                        <!-- Education items -->
+                    </div>
+                </section>
+
+                <!-- Certifications -->
+                <section style="margin-bottom: 10px;">
+                    <h2
+                        style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; border-bottom: 1px solid #eee; padding-bottom: 3px; margin-bottom: 8px; color: #000; font-weight: 700;">
+                        Certifications</h2>
+                    <div id="certs-ats-list"
+                        style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px; font-size: 11px;">
+                        <!-- Certs -->
+                    </div>
+                </section>
+
+                <div class="no-print" style="position: absolute; bottom: 20px; left: 0; right: 0; text-align: center;">
+                    <button onclick="window.print()" class="btn btn-primary"
+                        style="padding: 10px 24px; font-size: 14px;">
+                        <i data-lucide="printer" style="width: 16px; margin-right: 8px;"></i>
+                        Download PDF
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="no-print"
+        style="margin-top: 40px; padding-bottom: 20px; text-align: center; color: var(--text-tertiary); font-size: 13px;">
+        <p>© 2026 Rifat Ahsan Pulok.</p>
+    </footer>
+
+    <script type="module">
+        async function loadResume() {
+            const res = await fetch('./user.json');
+            const data = await res.json();
+
+            document.getElementById('user-name').textContent = data.name;
+            document.getElementById('user-role').textContent = data.role;
+            document.getElementById('user-email').textContent = data.contact.email;
+
+            // Grouped Skills for ATS
+            document.getElementById('skills-ats-container').innerHTML = Object.entries(data.skills).map(([cat, list]) => `
+                <p><strong>${cat.charAt(0).toUpperCase() + cat.slice(1)}:</strong> ${list.join(', ')}</p>
+            `).join('');
+
+            document.getElementById('experience-list').innerHTML = data.experience.map(exp => `
+                <div>
+                    <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1px;">
+                        <h3 style="font-size: 14px; font-weight: 700;">${exp.role}</h3>
+                        <span style="font-size: 11px; color: #444; font-weight: 500;">${exp.period}</span>
+                    </div>
+                    <p style="color: var(--accent-blue); font-weight: 600; font-size: 13px; margin-bottom: 2px;">${exp.company}</p>
+                    <ul style="font-size: 12px; color: #333; line-height: 1.4; padding-left: 16px;">
+                        <li>Led development of key features using ${data.skills.languages[0]} and ${data.skills.frontend[0]}.</li>
+                        <li>Collaborated with cross-functional teams to deliver high-quality software solutions.</li>
+                        <li>Optimized application performance resulting in a smoother user experience.</li>
+                    </ul>
+                </div>
+            `).join('');
+
+            document.getElementById('projects-mini-list').innerHTML = data.projects.slice(0, 3).map(p => `
+                <div>
+                    <h3 style="font-size: 13px; font-weight: 700; margin-bottom: 1px;">${p.title} | <span style="font-weight: 400; font-size: 11px; color: #555;">${p.tech.join(', ')}</span></h3>
+                    <p style="color: #333; font-size: 12px; line-height: 1.4;">${p.description}</p>
+                </div>
+            `).join('');
+
+            document.getElementById('education-ats-container').innerHTML = data.education.map(edu => `
+                 <div style="display: flex; justify-content: space-between; align-items: baseline;">
+                    <div>
+                        <h3 style="font-size: 13px; font-weight: 700;">${edu.degree}</h3>
+                        <p style="font-size: 12px; color: #444;">${edu.school}</p>
+                        <p style="font-size: 11px; color: #666; margin-top: 1px;">${edu.details}</p>
+                    </div>
+                    <span style="font-size: 11px; color: #444; font-weight: 500;">${edu.period}</span>
+                </div>
+            `).join('');
+
+            document.getElementById('certs-ats-list').innerHTML = data.certifications.map(cert => `
+                <p>• <strong>${cert.title}</strong> — ${cert.issuer} (${cert.date})</p>
+            `).join('');
+
+            lucide.createIcons();
+        }
+        loadResume();
+    </script>
+</body>
+
+</html>

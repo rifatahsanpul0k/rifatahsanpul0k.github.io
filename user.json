@@ -1,0 +1,157 @@
+{
+    "name": "Rifat Ahsan Pulok",
+    "role": "CS Undergrad & Software Engineer",
+    "headline": "Capturing the future<br>of code and design.",
+    "bio": "Currently pursuing my Bachelor's in Computer Science. Passionate about software architecture, UI/UX design, and AI. I believe code should not only work perfectly but also look beautiful.",
+    "skills": {
+        "languages": [
+            "TypeScript",
+            "JavaScript",
+            "Python",
+            "Go",
+            "C++"
+        ],
+        "frontend": [
+            "React",
+            "Next.js",
+            "Tailwind CSS",
+            "Figma",
+            "Redux"
+        ],
+        "backend": [
+            "Node.js",
+            "PostgreSQL",
+            "MongoDB",
+            "GraphQL",
+            "Docker"
+        ],
+        "tools": [
+            "Git",
+            "Vite",
+            "Azure",
+            "Postman",
+            "Linux"
+        ]
+    },
+    "stats": {
+        "github": "200+",
+        "projects": "15+",
+        "experience": "Internship"
+    },
+    "experience": [
+        {
+            "role": "Software Intern",
+            "company": "TechCorp",
+            "period": "Summer 2025 • Remote"
+        }
+    ],
+    "education": [
+        {
+            "degree": "BSc in Computer Science",
+            "school": "University of Engineering & Technology",
+            "period": "2022 — 2026",
+            "details": "Major in Software Engineering. CGPA: 3.9/4.0"
+        }
+    ],
+    "certifications": [
+        {
+            "title": "AWS Certified Cloud Practitioner",
+            "issuer": "Amazon Web Services",
+            "date": "2025"
+        },
+        {
+            "title": "Meta Front-End Developer Professional Certificate",
+            "issuer": "Coursera / Meta",
+            "date": "2024"
+        }
+    ],
+    "featured_project": {
+        "title": "AI Task Manager",
+        "description": "A neural-link inspired task orchestration engine."
+    },
+    "contact": {
+        "email": "hello@example.com",
+        "linkedin": "#",
+        "twitter": "#",
+        "instagram": "#"
+    },
+    "projects": [
+        {
+            "title": "AI Task Manager",
+            "description": "A neural-link inspired task orchestration engine built with React and OpenAI API.",
+            "tech": [
+                "React",
+                "Node.js",
+                "OpenAI"
+            ],
+            "link": "#",
+            "image": "https://images.unsplash.com/photo-1676299081847-824916de030a?auto=format&fit=crop&w=400&q=80"
+        },
+        {
+            "title": "E-Commerce Suite",
+            "description": "Full-stack marketplace with real-time inventory management.",
+            "tech": [
+                "Next.js",
+                "PostgreSQL",
+                "Stripe"
+            ],
+            "link": "#",
+            "image": "https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&w=400&q=80"
+        },
+        {
+            "title": "Portfolio v2",
+            "description": "Apple-inspired personal portfolio with Bento grid layout.",
+            "tech": [
+                "HTML",
+                "CSS",
+                "JS"
+            ],
+            "link": "#",
+            "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=400&q=80"
+        }
+    ],
+    "blog": [
+        {
+            "title": "Why I moved to Figma for Developer Handoff",
+            "date": "Feb 5, 2026",
+            "excerpt": "Exploring the synergy between design and code in modern web development.",
+            "slug": "figma-dev-handoff"
+        },
+        {
+            "title": "Building a Neural-Link inspired UI",
+            "date": "Jan 20, 2026",
+            "excerpt": "How to create fluid, glassmorphic interfaces that feel alive.",
+            "slug": "neural-link-ui"
+        }
+    ],
+    "uses": {
+        "hardware": [
+            {
+                "name": "MacBook Pro M2 Max",
+                "description": "14-inch, 32GB RAM"
+            },
+            {
+                "name": "Dell UltraSharp 27\"",
+                "description": "4K USB-C Hub Monitor"
+            },
+            {
+                "name": "NuPhy Air75 V2",
+                "description": "Mechanical Keyboard"
+            }
+        ],
+        "software": [
+            {
+                "name": "VS Code",
+                "description": "Night Owl Theme"
+            },
+            {
+                "name": "Arc Browser",
+                "description": "The internet, evolved"
+            },
+            {
+                "name": "Warp",
+                "description": "The AI terminal"
+            }
+        ]
+    }
+}

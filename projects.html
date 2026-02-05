@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Rifat Ahsan Pulok</title>
+    <meta name="description" content="A showcase of software engineering and design projects by Rifat Ahsan Pulok.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <nav class="glass-panel"
+        style="position: sticky; top: 20px; z-index: 1000; margin: 20px auto; max-width: 800px; padding: 12px 24px; border-radius: 980px; display: flex; justify-content: space-between; align-items: center;">
+        <a href="/"
+            style="text-decoration: none; color: var(--text-primary); font-weight: 600; letter-spacing: -0.5px;">RP</a>
+        <div style="display: flex; gap: 24px; font-size: 14px; font-weight: 500;">
+            <a href="/" style="text-decoration: none; color: var(--text-primary);">Home</a>
+            <a href="/projects.html" style="text-decoration: none; color: var(--accent-blue);">Projects</a>
+            <a href="/blog.html" style="text-decoration: none; color: var(--text-primary);">Blog</a>
+            <a href="/uses.html" style="text-decoration: none; color: var(--text-primary);">Uses</a>
+            <a href="/resume.html" style="text-decoration: none; color: var(--text-primary);">Resume</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section style="padding-top: 60px;">
+            <span class="section-label">Gallery</span>
+            <h1 class="title-large animate-fade-in">All Projects.</h1>
+            <p class="subtitle animate-fade-in delay-1">A collection of things I've built, from experimental web apps to
+                architecture studies.</p>
+
+            <div id="projects-list" class="bento-grid">
+                <!-- Projects will be loaded dynamically -->
+            </div>
+        </section>
+    </main>
+
+    <footer
+        style="margin-top: 100px; padding-bottom: 40px; text-align: center; color: var(--text-tertiary); font-size: 14px;">
+        <p>© 2026 Rifat Ahsan Pulok. Built with purpose.</p>
+    </footer>
+
+    <script type="module">
+        async function loadProjects() {
+            const res = await fetch('./user.json');
+            const data = await res.json();
+            const container = document.getElementById('projects-list');
+
+            container.innerHTML = data.projects.map((p, i) => {
+                // Alternating sizes for bento effect
+                const spanClass = (i % 3 === 0) ? 'span-2 row-2' : '';
+                return `
+                <div class="glass-panel bento-item ${spanClass} animate-fade-in" style="animation-delay: ${0.1 * (i + 1)}s; display: flex; flex-direction: column;">
+                    <div style="width: 100%; height: ${i % 3 === 0 ? '300px' : '180px'}; border-radius: 12px; overflow: hidden; background: #eee; margin-bottom: 20px;">
+                        <img src="${p.image}" alt="${p.title}" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div style="flex-grow: 1;">
+                        <h3 style="font-size: ${i % 3 === 0 ? '28px' : '18px'}; margin-bottom: 12px;">${p.title}</h3>
+                        <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.6; margin-bottom: 20px;">${p.description}</p>
+                        <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px;">
+                            ${p.tech.map(t => `<span style="font-size: 11px; background: rgba(0,0,0,0.05); padding: 4px 8px; border-radius: 4px; font-weight: 500;">${t}</span>`).join('')}
+                        </div>
+                    </div>
+                    <a href="${p.link}" class="btn btn-primary" style="font-size: 14px; width: fit-content;">Explore →</a>
+                </div>
+            `}).join('');
+
+            lucide.createIcons();
+        }
+        loadProjects();
+    </script>
+</body>
+
+</html>
