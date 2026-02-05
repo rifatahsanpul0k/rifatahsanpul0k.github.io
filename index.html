@@ -15,172 +15,242 @@
 
     <!-- Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-
-    <link rel="stylesheet" href="./index.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
-    <nav class="glass-panel"
-        style="position: sticky; top: 20px; z-index: 1000; margin: 20px auto; max-width: 800px; padding: 12px 24px; border-radius: 980px; display: flex; justify-content: space-between; align-items: center;">
-        <span id="nav-initials" style="font-weight: 600; letter-spacing: -0.5px;">RP</span>
-        <div style="display: flex; gap: 24px; font-size: 14px; font-weight: 500;">
-            <a href="/" style="text-decoration: none; color: var(--accent-blue);">Home</a>
-            <a href="/projects.html" style="text-decoration: none; color: var(--text-primary);">Projects</a>
-            <a href="/uses.html" style="text-decoration: none; color: var(--text-primary);">Uses</a>
-            <a href="/resume.html" style="text-decoration: none; color: var(--text-primary);">Resume</a>
+<body class="bg-slate-50 text-slate-900 antialiased selection:bg-blue-100 selection:text-blue-900 font-sans">
+    <!-- Navbar -->
+    <nav
+        class="fixed top-5 left-0 right-0 z-50 mx-auto max-w-3xl px-6 py-3 rounded-full flex justify-between items-center backdrop-blur-md bg-white/70 border border-white/40 shadow-sm transition-all duration-300 hover:shadow-md hover:bg-white/80">
+        <a href="/"
+            class="text-base font-bold tracking-tighter text-slate-900 hover:text-blue-600 transition-colors">RP</a>
+        <div class="flex gap-6 text-sm font-medium text-slate-600">
+            <a href="/" class="text-blue-600">Home</a>
+            <a href="/projects.html" class="hover:text-blue-600 transition-colors">Projects</a>
+            <a href="/resume.html" class="hover:text-blue-600 transition-colors">Resume</a>
         </div>
     </nav>
 
-    <main class="container">
+    <main class="min-h-screen pt-32 pb-20 px-4 md:px-8 max-w-7xl mx-auto">
+
         <!-- Hero Section -->
-        <section id="hero"
-            style="text-align: center; padding: 160px 0 100px 0; min-height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-            <div class="animate-fade-in" style="margin-bottom: 24px;">
-                <span
-                    style="font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; color: var(--accent-blue); background: rgba(0, 102, 204, 0.05); padding: 8px 16px; border-radius: 980px;">Engineering
-                    & Design</span>
+        <section class="mb-20 text-center max-w-4xl mx-auto animate-fade-in">
+            <div
+                class="inline-flex items-center gap-2 px-3 py-1 mb-8 text-xs font-bold tracking-widest text-blue-600 uppercase bg-blue-50 rounded-full border border-blue-100">
+                <span class="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
+                Available for work
             </div>
-            <h1 id="hero-headline" class="title-large animate-fade-in"
-                style="max-width: 900px; margin: 0 auto 32px auto;">Capturing the future <br>of code and design.</h1>
-            <p id="hero-subtitle" class="subtitle animate-fade-in delay-1"
-                style="max-width: 600px; margin: 0 auto 48px auto;">I'm Rifat, a CS Undergrad student building products
-                with precision and purpose.</p>
-            <div class="animate-fade-in delay-2" style="display: flex; gap: 16px; justify-content: center;">
-                <a href="/projects.html" class="btn btn-primary" style="padding: 16px 32px; font-size: 18px;">See My
-                    Work</a>
-                <a href="/resume.html" class="btn btn-link"
-                    style="font-size: 18px; font-weight: 600; padding: 16px;">Expertise →</a>
+            <h1 id="hero-headline"
+                class="text-5xl md:text-7xl font-bold tracking-tighter text-slate-900 mb-6 leading-[1.1]">
+                <!-- Loaded dynamically -->
+            </h1>
+            <p id="hero-subtitle" class="text-lg md:text-xl text-slate-500 max-w-2xl mx-auto leading-relaxed">
+                <!-- Loaded dynamically -->
+            </p>
+
+            <div class="mt-10 flex gap-4 justify-center">
+                <a href="/projects.html"
+                    class="px-8 py-3.5 rounded-full bg-slate-900 text-white font-medium hover:bg-slate-800 transition-all hover:scale-105 shadow-lg shadow-slate-200">
+                    See my work
+                </a>
+                <a href="#contact"
+                    class="px-8 py-3.5 rounded-full bg-white text-slate-900 border border-slate-200 font-medium hover:bg-slate-50 transition-all hover:scale-105">
+                    Contact me
+                </a>
             </div>
         </section>
 
-        <!-- Bento Grid Section (Simplified) -->
-        <section id="bento">
-            <div class="bento-grid">
-                <!-- About Card -->
-                <div class="glass-panel bento-item span-3 row-2 animate-fade-in" id="about">
-                    <span class="section-label">Identity</span>
-                    <h3 id="about-role" style="margin-bottom: 24px; font-size: 32px;">Undergrad CS Student</h3>
-                    <p id="about-bio"
-                        style="color: var(--text-secondary); font-size: 18px; line-height: 1.8; margin-bottom: 32px;">
-                        Currently pursuing my Bachelor's in Computer Science. Passionate about software architecture,
-                        UI/UX design, and AI. I believe code should not only work perfectly but also look beautiful.
-                    </p>
-                    <div id="skills-container" style="display: flex; flex-wrap: wrap; gap: 12px;">
-                        <!-- Skills will be loaded here -->
+        <!-- Bento Grid -->
+        <section id="bento-grid"
+            class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 auto-rows-[minmax(180px,auto)]">
+
+            <!-- 1. Profile / About Card (Large) -->
+            <div
+                class="md:col-span-2 lg:col-span-2 md:row-span-2 bg-white rounded-3xl p-8 border border-slate-100 shadow-[0_2px_20px_rgb(0,0,0,0.02)] hover:shadow-[0_10px_40px_rgb(0,0,0,0.06)] transition-all duration-300 relative overflow-hidden group">
+                <div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+                    <i data-lucide="user" class="w-32 h-32 text-blue-600"></i>
+                </div>
+                <h3 class="text-sm font-bold uppercase tracking-wider text-blue-600 mb-2">About Me</h3>
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">CS Undergrad & <br>Software Engineer.</h2>
+                <p id="about-bio" class="text-slate-500 leading-relaxed mb-8 max-w-md">
+                    <!-- Loaded dynamically -->
+                </p>
+                <div id="skills-mini-list" class="flex flex-wrap gap-2 relative z-10">
+                    <!-- Skills pills -->
+                </div>
+            </div>
+
+            <!-- 2. Github Stats -->
+            <a href="https://github.com/rifatahsanpul0k" target="_blank"
+                class="bg-slate-900 rounded-3xl p-6 text-white shadow-xl hover:scale-[1.02] transition-transform duration-300 flex flex-col justify-between group">
+                <div class="flex justify-between items-start">
+                    <div class="p-2 bg-white/10 rounded-xl backdrop-blur-sm">
+                        <i data-lucide="github" class="w-6 h-6"></i>
                     </div>
+                    <i data-lucide="arrow-up-right"
+                        class="w-5 h-5 opacity-50 group-hover:opacity-100 transition-opacity"></i>
+                </div>
+                <div>
+                    <span class="text-4xl font-bold tracking-tight" id="github-stat">200+</span>
+                    <p class="text-slate-400 text-sm font-medium mt-1">Open Source Commits</p>
+                </div>
+            </a>
+
+            <!-- 3. Connect / Map -->
+            <div class="bg-blue-600 rounded-3xl p-6 text-white shadow-xl shadow-blue-200 hover:scale-[1.02] transition-transform duration-300 flex flex-col justify-between overflow-hidden relative"
+                id="contact">
+                <div class="absolute inset-0 bg-gradient-to-br from-blue-500 to-blue-700"></div>
+                <!-- Abstract Map Pattern -->
+                <div class="absolute inset-0 opacity-20"
+                    style="background-image: radial-gradient(#fff 1px, transparent 1px); background-size: 20px 20px;">
                 </div>
 
-                <!-- Connect Card -->
-                <div class="glass-panel bento-item row-2 animate-fade-in delay-1" id="contact"
-                    style="display: flex; flex-direction: column; justify-content: space-between;">
-                    <div>
-                        <span class="section-label">Connect</span>
-                        <h3 style="font-size: 24px; margin-bottom: 16px;">Let's design something great.</h3>
-                        <p style="color: var(--text-secondary); font-size: 14px;">Always open to research opportunities
-                            and internships.</p>
+                <div class="relative z-10">
+                    <div class="p-2 bg-white/10 rounded-xl w-fit backdrop-blur-sm mb-4">
+                        <i data-lucide="mail" class="w-6 h-6"></i>
                     </div>
-                    <a id="email-link" href="#" class="btn btn-primary"
-                        style="font-size: 14px; padding: 16px 24px; justify-content: center;">Send an email →</a>
+                    <h3 class="text-xl font-bold mb-1">Let's Connect</h3>
+                    <p class="text-blue-100 text-sm mb-4">Open to opportunities.</p>
                 </div>
+                <a id="email-link" href="#"
+                    class="relative z-10 text-sm font-bold bg-white text-blue-600 px-4 py-2 rounded-lg text-center hover:bg-blue-50 transition-colors">
+                    Send Email
+                </a>
+            </div>
 
-                <!-- GitHub Statistics -->
-                <div class="glass-panel bento-item span-2 animate-fade-in delay-2"
-                    style="display: flex; align-items: center; gap: 24px;">
+            <!-- 4. Recent Experience (Wide) -->
+            <div
+                class="md:col-span-2 lg:col-span-2 bg-white rounded-3xl p-8 border border-slate-100 shadow-[0_2px_20px_rgb(0,0,0,0.02)] hover:shadow-[0_10px_40px_rgb(0,0,0,0.06)] transition-all duration-300">
+                <h3 class="text-sm font-bold uppercase tracking-wider text-slate-400 mb-6 flex items-center gap-2">
+                    <i data-lucide="briefcase" class="w-4 h-4"></i> Experience
+                </h3>
+                <div id="experience-list" class="space-y-6">
+                    <!-- Exp items -->
+                </div>
+            </div>
+
+            <!-- 5. Tech Stack (Tall) -->
+            <!-- 5. Tech Stack (Tall) - No Link -->
+            <div
+                class="md:row-span-2 bg-slate-50 rounded-3xl p-6 border border-slate-100 transition-colors duration-300 flex flex-col group">
+                <div class="mb-6">
                     <div
-                        style="background: rgba(0,0,0,0.05); width: 64px; height: 64px; border-radius: 16px; display: flex; align-items: center; justify-content: center;">
-                        <i data-lucide="github"></i>
+                        class="w-12 h-12 bg-white rounded-2xl shadow-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i data-lucide="cpu" class="w-6 h-6 text-slate-700"></i>
                     </div>
-                    <div>
-                        <span id="github-stat" style="font-size: 32px; font-weight: 700; display: block;">200+</span>
-                        <span style="font-size: 14px; color: var(--text-secondary);">Open Source Contributions</span>
-                    </div>
+                    <h3 class="font-bold text-lg text-slate-900">Tech Stack</h3>
+                    <p class="text-sm text-slate-500 mt-1">My toolbox.</p>
                 </div>
-
-                <!-- Experience Card -->
-                <div class="glass-panel bento-item span-2 animate-fade-in delay-3">
-                    <div style="display: flex; align-items: center; gap: 24px;">
-                        <div
-                            style="background: rgba(0, 102, 204, 0.1); width: 64px; height: 64px; border-radius: 16px; display: flex; align-items: center; justify-content: center;">
-                            <i data-lucide="briefcase" style="color: var(--accent-blue);"></i>
-                        </div>
-                        <div>
-                            <span style="font-size: 14px; color: var(--text-secondary); display: block;">Recent
-                                Experience</span>
-                            <span style="font-size: 20px; font-weight: 600;">Software Intern @ TechCorp</span>
-                        </div>
-                    </div>
+                <div id="scrolling-tech" class="flex-grow flex flex-col gap-3 mask-gradient">
+                    <!-- Populated via JS -->
                 </div>
             </div>
+
+            <!-- 6. Project Showcase (Dynamic) -->
+            <div id="featured-project-container"
+                class="md:col-span-3 lg:col-span-3 bg-slate-900 rounded-3xl overflow-hidden relative min-h-[300px] group text-white">
+                <!-- Loaded via JS -->
+            </div>
+
         </section>
 
-        <!-- Projects Bento Section -->
-        <section id="projects-bento" style="padding-top: 80px;">
-            <div style="margin-bottom: 48px;">
-                <span class="section-label">Portfolio</span>
-                <h2 style="font-size: 40px;">Featured Work.</h2>
-            </div>
-            <div id="projects-bento-grid" class="bento-grid">
-                <!-- Projects will be loaded as bento items here -->
-            </div>
-            <div style="text-align: center; margin-top: 64px;">
-                <a href="/projects.html" class="btn btn-link" style="font-size: 18px; font-weight: 600;">View all
-                    projects →</a>
-            </div>
-        </section>
-
-        <!-- Education & Certifications -->
-        <section id="education-certs" style="padding-top: 100px;">
-            <div style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 60px;">
-                <!-- Education -->
-                <div>
-                    <span class="section-label">Academic Path</span>
-                    <h2 style="font-size: 40px; margin-bottom: 40px;">Education.</h2>
-                    <div id="education-container" style="display: flex; flex-direction: column; gap: 32px;">
-                        <!-- Education items -->
-                    </div>
-                </div>
-                <!-- Certifications -->
-                <div>
-                    <span class="section-label">Credentials</span>
-                    <h2 style="font-size: 40px; margin-bottom: 40px;">Certificates.</h2>
-                    <div id="certs-container" style="display: flex; flex-direction: column; gap: 24px;">
-                        <!-- Certification items -->
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills" style="padding-top: 100px;">
-            <div style="text-align: center; margin-bottom: 60px;">
-                <h2 style="font-size: 48px; margin-bottom: 16px;">Expertise.</h2>
-                <p style="color: var(--text-secondary); font-size: 18px;">A comprehensive look at my technical toolkit
-                    and proficiencies.</p>
-            </div>
-            <div id="skills-grid"
-                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px;">
-                <!-- Skill categories will be loaded here -->
-            </div>
-        </section>
-
-        <!-- Global Footer -->
-        <footer class="global-footer no-print">
-            <div class="container footer-content">
-                <div class="footer-socials">
-                    <a id="footer-github" href="#" target="_blank"><i data-lucide="github"></i></a>
-                    <a id="footer-linkedin" href="#" target="_blank"><i data-lucide="linkedin"></i></a>
-                    <a id="footer-twitter" href="#" target="_blank"><i data-lucide="twitter"></i></a>
-                    <a id="footer-instagram" href="#" target="_blank"><i data-lucide="instagram"></i></a>
-                </div>
-                <p class="footer-credits" id="footer-text">© 2026 Rifat Ahsan Pulok.</p>
+        <!-- Footer -->
+        <footer
+            class="mt-20 pt-10 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-6">
+            <p id="footer-credit" class="text-slate-500 font-medium">© 2026 Rifat Ahsan Pulok.</p>
+            <div class="flex gap-6">
+                <a id="footer-github" href="#" target="_blank"
+                    class="text-slate-400 hover:text-slate-900 transition-colors"><i data-lucide="github"
+                        class="w-5 h-5"></i></a>
+                <a id="footer-linkedin" href="#" target="_blank"
+                    class="text-slate-400 hover:text-blue-700 transition-colors"><i data-lucide="linkedin"
+                        class="w-5 h-5"></i></a>
+                <a id="footer-twitter" href="#" target="_blank"
+                    class="text-slate-400 hover:text-blue-400 transition-colors"><i data-lucide="twitter"
+                        class="w-5 h-5"></i></a>
             </div>
         </footer>
     </main>
 
-    <script type="module" src="./main.js"></script>
-    <script>
-        // Initialize Lucide icons
-        lucide.createIcons();
+    <script type="module">
+        async function loadHome() {
+            try {
+                const res = await fetch('./user.json');
+                const data = await res.json();
+
+                // Hero
+                document.getElementById('hero-headline').innerHTML = data.headline;
+                document.getElementById('hero-subtitle').textContent = data.bio.split('.')[0] + '.';
+
+                // About
+                document.getElementById('about-bio').textContent = data.bio;
+
+                // Mini Skills
+                const topSkills = data.skills.languages.slice(0, 3).concat(data.skills.frontend.slice(0, 3));
+                document.getElementById('skills-mini-list').innerHTML = topSkills.map(s => `
+                    <span class="px-3 py-1 bg-slate-50 text-slate-600 text-xs font-bold uppercase tracking-wider rounded-lg border border-slate-100">
+                        ${s}
+                    </span>
+                `).join('');
+
+                // Tech Stack Column
+                const allTech = [...data.skills.frontend, ...data.skills.backend, ...data.skills.tools];
+                document.getElementById('scrolling-tech').innerHTML = allTech.slice(0, 6).map(t => `
+                    <div class="flex items-center gap-3 p-2 rounded-xl bg-white border border-slate-100 shadow-sm">
+                        <div class="w-2 h-2 rounded-full bg-green-400"></div>
+                        <span class="text-sm font-medium text-slate-700">${t}</span>
+                    </div>
+                `).join('') + `<div class="text-xs text-center text-slate-400 mt-2">+ ${allTech.length - 6} more</div>`;
+
+                // Experience
+                document.getElementById('experience-list').innerHTML = data.experience.map(exp => `
+                    <div class="flex justify-between items-start pb-4 border-b border-slate-50 last:border-0 last:pb-0">
+                        <div>
+                            <h4 class="font-bold text-slate-900">${exp.role}</h4>
+                            <p class="text-sm text-blue-600 font-medium">${exp.company}</p>
+                        </div>
+                        <span class="text-xs font-bold text-slate-400 bg-slate-50 px-2 py-1 rounded-md">${exp.period}</span>
+                    </div>
+                `).join('');
+
+                // Stats
+                document.getElementById('github-stat').textContent = data.stats.github;
+
+                // Contact
+                document.getElementById('email-link').href = `mailto:${data.contact.email}`;
+
+                // Footer
+                if (data.contact) {
+                    const setLink = (id, url) => { const el = document.getElementById(id); if (el) el.href = url || '#'; };
+                    setLink('footer-github', data.contact.github ? `https://github.com/${data.contact.github}` : '#');
+                    setLink('footer-linkedin', data.contact.linkedin);
+                    setLink('footer-twitter', data.contact.twitter);
+                }
+
+                // Featured Project (Take the first one)
+                if (data.projects && data.projects.length > 0) {
+                    const p = data.projects[0];
+                    document.getElementById('featured-project-container').innerHTML = `
+                        <img src="${p.image}" class="absolute inset-0 w-full h-full object-cover opacity-60 transition-transform duration-700 group-hover:scale-105" alt="${p.title}">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-8 w-full">
+                            <span class="inline-block px-3 py-1 mb-3 text-[10px] font-bold uppercase tracking-widest text-white bg-blue-600 rounded-full">Featured Project</span>
+                            <h3 class="text-3xl font-bold mb-2">${p.title}</h3>
+                            <p class="text-slate-300 text-sm mb-6 line-clamp-2 max-w-lg">${p.description}</p>
+                            
+                            <a href="${p.link}" class="inline-flex items-center gap-2 text-sm font-bold text-white hover:text-blue-400 transition-colors">
+                                View Case Study <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    `;
+                }
+
+                lucide.createIcons();
+            } catch (err) {
+                console.error(err);
+            }
+        }
+        loadHome();
     </script>
 </body>
 

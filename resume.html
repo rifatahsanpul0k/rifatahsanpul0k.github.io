@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./index.css">
     <style>
         @media print {
@@ -80,15 +81,14 @@
 </head>
 
 <body>
-    <nav class="glass-panel no-print"
-        style="position: sticky; top: 20px; z-index: 1000; margin: 20px auto; max-width: 800px; padding: 12px 24px; border-radius: 980px; display: flex; justify-content: space-between; align-items: center;">
+    <nav
+        class="fixed top-5 left-0 right-0 z-50 mx-auto max-w-3xl px-6 py-3 rounded-full flex justify-between items-center backdrop-blur-md bg-white/70 border border-white/40 shadow-sm transition-all duration-300 hover:shadow-md hover:bg-white/80 no-print">
         <a href="/"
-            style="text-decoration: none; color: var(--text-primary); font-weight: 600; letter-spacing: -0.5px;">RP</a>
-        <div style="display: flex; gap: 24px; font-size: 14px; font-weight: 500;">
-            <a href="/" style="text-decoration: none; color: var(--text-primary);">Home</a>
-            <a href="/projects.html" style="text-decoration: none; color: var(--text-primary);">Projects</a>
-            <a href="/uses.html" style="text-decoration: none; color: var(--text-primary);">Uses</a>
-            <a href="/resume.html" style="text-decoration: none; color: var(--accent-blue);">Resume</a>
+            class="text-base font-bold tracking-tighter text-slate-900 hover:text-blue-600 transition-colors">RP</a>
+        <div class="flex gap-6 text-sm font-medium text-slate-600">
+            <a href="/" class="hover:text-blue-600 transition-colors">Home</a>
+            <a href="/projects.html" class="hover:text-blue-600 transition-colors">Projects</a>
+            <a href="/resume.html" class="text-blue-600">Resume</a>
         </div>
     </nav>
 

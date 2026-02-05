@@ -10,163 +10,58 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./index.css">
 </head>
 
-<body>
-    <nav class="glass-panel"
-        style="position: sticky; top: 20px; z-index: 1000; margin: 20px auto; max-width: 800px; padding: 12px 24px; border-radius: 980px; display: flex; justify-content: space-between; align-items: center;">
+<body class="bg-slate-50 text-slate-900 antialiased selection:bg-blue-100 selection:text-blue-900">
+    <!-- Navbar -->
+    <nav
+        class="fixed top-5 left-0 right-0 z-50 mx-auto max-w-3xl px-6 py-3 rounded-full flex justify-between items-center backdrop-blur-md bg-white/70 border border-white/40 shadow-sm transition-all duration-300 hover:shadow-md hover:bg-white/80">
         <a href="/"
-            style="text-decoration: none; color: var(--text-primary); font-weight: 600; letter-spacing: -0.5px;">RP</a>
-        <div style="display: flex; gap: 24px; font-size: 14px; font-weight: 500;">
-            <a href="/" style="text-decoration: none; color: var(--text-primary);">Home</a>
-            <a href="/projects.html" style="text-decoration: none; color: var(--accent-blue);">Projects</a>
-            <a href="/uses.html" style="text-decoration: none; color: var(--text-primary);">Uses</a>
-            <a href="/resume.html" style="text-decoration: none; color: var(--text-primary);">Resume</a>
+            class="text-base font-bold tracking-tighter text-slate-900 hover:text-blue-600 transition-colors">RP</a>
+        <div class="flex gap-6 text-sm font-medium text-slate-600">
+            <a href="/" class="hover:text-blue-600 transition-colors">Home</a>
+            <a href="/projects.html" class="text-blue-600">Projects</a>
+            <a href="/resume.html" class="hover:text-blue-600 transition-colors">Resume</a>
         </div>
     </nav>
 
-    <style>
-        .hero-gradient-text {
-            background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-blue) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .project-card {
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-            background: rgba(255, 255, 255, 0.7);
-        }
-
-        .project-card:hover {
-            transform: translateY(-8px) scale(1.01);
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
-            border-color: rgba(0, 102, 204, 0.2);
-            background: rgba(255, 255, 255, 0.9);
-        }
-
-        .image-reveal {
-            position: relative;
-            width: 100%;
-            overflow: hidden;
-            border-radius: 16px;
-            background: #f0f0f2;
-        }
-
-        .project-card:hover .project-image {
-            transform: scale(1.04);
-        }
-
-        .project-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .tech-tag {
-            font-size: 11px;
-            font-weight: 600;
-            padding: 6px 14px;
-            border-radius: 100px;
-            background: rgba(0, 102, 204, 0.04);
-            color: var(--accent-blue);
-            border: 1px solid rgba(0, 102, 204, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .project-card:hover .tech-tag {
-            background: rgba(0, 102, 204, 0.08);
-            transform: translateY(-1px);
-        }
-
-        .stat-item {
-            text-align: center;
-        }
-
-        .stat-value {
-            display: block;
-            font-size: 40px;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 4px;
-        }
-
-        .stat-label {
-            font-size: 12px;
-            font-weight: 700;
-            color: var(--text-tertiary);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
-
-        .explore-btn {
-            font-weight: 600;
-            font-size: 15px;
-            color: var(--accent-blue);
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            margin-top: auto;
-            transition: gap 0.3s ease;
-        }
-
-        .explore-btn:hover {
-            gap: 12px;
-        }
-    </style>
-
-    <main class="container">
-        <!-- Refined Dramatic Header -->
-        <section style="padding: 160px 0 100px 0;">
-            <div class="animate-fade-in" style="text-align: center; margin-bottom: 48px;">
-                <span class="section-label"
-                    style="letter-spacing: 0.2em; margin-bottom: 24px; display: inline-block;">Selected Works</span>
-                <h1 class="title-large hero-gradient-text"
-                    style="margin-bottom: 32px; font-size: clamp(48px, 8vw, 84px);">Project Gallery.</h1>
-                <p class="subtitle" style="margin: 0 auto 64px auto; max-width: 650px; font-size: 20px;">A detailed
-                    collection of architecture studies, complex web systems, and experimental digital experiences.</p>
-
-                <!-- Advanced Project Stats -->
-                <div
-                    style="display: flex; justify-content: center; align-items: center; gap: 80px; margin-bottom: 100px;">
-                    <div class="stat-item">
-                        <span id="proj-count" class="stat-value"
-                            style="font-size: 48px; letter-spacing: -0.02em;">0</span>
-                        <span class="stat-label">Total Projects</span>
-                    </div>
-                    <div
-                        style="width: 1px; height: 60px; background: linear-gradient(to bottom, transparent, var(--glass-border), transparent);">
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-value" style="font-size: 48px; letter-spacing: -0.02em;">2026</span>
-                        <span class="stat-label">Last Updated</span>
-                    </div>
-                </div>
-            </div>
-
-            <div id="projects-grid" class="bento-grid" style="grid-auto-rows: minmax(420px, auto); gap: 48px;">
-                <!-- Loaded dynamically -->
+    <main class="min-h-screen">
+        <!-- Hero Section -->
+        <!-- Hero Section -->
+        <section class="pt-32 pb-8 px-4 max-w-5xl mx-auto text-center">
+            <div class="animate-fade-in">
+                <h1 class="text-4xl font-bold tracking-tighter text-slate-900 mb-2">Projects.</h1>
+                <p class="text-slate-500 text-lg">My latest engineering and design work.</p>
             </div>
         </section>
 
-        <!-- Global Footer -->
-        <footer class="global-footer">
-            <div class="container footer-content">
-                <div class="footer-socials">
-                    <a id="footer-github" href="#" target="_blank"><i data-lucide="github"></i></a>
-                    <a id="footer-linkedin" href="#" target="_blank"><i data-lucide="linkedin"></i></a>
-                    <a id="footer-twitter" href="#" target="_blank"><i data-lucide="twitter"></i></a>
-                    <a id="footer-instagram" href="#" target="_blank"><i data-lucide="instagram"></i></a>
+        <!-- Projects Grid -->
+        <section class="px-4 pb-32 max-w-5xl mx-auto">
+            <div id="projects-grid" class="flex flex-col gap-10">
+                <!-- Projects will be loaded here -->
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="py-12 border-t border-slate-200 bg-white/50 backdrop-blur-sm">
+            <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex gap-6">
+                    <a id="footer-github" href="#" target="_blank"
+                        class="text-slate-400 hover:text-slate-900 transition-colors hover:scale-110 transform duration-200"><i
+                            data-lucide="github" class="w-5 h-5"></i></a>
+                    <a id="footer-linkedin" href="#" target="_blank"
+                        class="text-slate-400 hover:text-blue-700 transition-colors hover:scale-110 transform duration-200"><i
+                            data-lucide="linkedin" class="w-5 h-5"></i></a>
+                    <a id="footer-twitter" href="#" target="_blank"
+                        class="text-slate-400 hover:text-blue-400 transition-colors hover:scale-110 transform duration-200"><i
+                            data-lucide="twitter" class="w-5 h-5"></i></a>
+                    <a id="footer-instagram" href="#" target="_blank"
+                        class="text-slate-400 hover:text-pink-600 transition-colors hover:scale-110 transform duration-200"><i
+                            data-lucide="instagram" class="w-5 h-5"></i></a>
                 </div>
-                <p class="footer-credits" id="footer-credit">© 2026 Rifat Ahsan Pulok.</p>
+                <p id="footer-credit" class="text-sm text-slate-500 font-medium">© 2026 Rifat Ahsan Pulok.</p>
             </div>
         </footer>
     </main>
@@ -179,49 +74,55 @@
                 const container = document.getElementById('projects-grid');
 
                 // Stats
-                document.getElementById('proj-count').textContent = data.projects.length;
                 document.getElementById('footer-credit').textContent = `© 2026 ${data.name}.`;
 
                 // Footer links
                 if (data.contact) {
-                    const githubLink = document.getElementById('footer-github');
-                    if (githubLink) githubLink.href = data.contact.github ? `https://github.com/${data.contact.github}` : '#';
-
-                    const linkedinLink = document.getElementById('footer-linkedin');
-                    if (linkedinLink) linkedinLink.href = data.contact.linkedin || '#';
-
-                    const twitterLink = document.getElementById('footer-twitter');
-                    if (twitterLink) twitterLink.href = data.contact.twitter || '#';
-
-                    const instagramLink = document.getElementById('footer-instagram');
-                    if (instagramLink) instagramLink.href = data.contact.instagram || '#';
+                    const setLink = (id, url) => {
+                        const el = document.getElementById(id);
+                        if (el) el.href = url || '#';
+                    };
+                    setLink('footer-github', data.contact.github ? `https://github.com/${data.contact.github}` : '#');
+                    setLink('footer-linkedin', data.contact.linkedin);
+                    setLink('footer-twitter', data.contact.twitter);
+                    setLink('footer-instagram', data.contact.instagram);
                 }
 
                 container.innerHTML = data.projects.map((p, i) => {
-                    const isHero = i === 0;
-                    const spanClass = isHero ? 'span-4' : (i % 3 === 0 ? 'span-2' : 'span-1');
-
                     return `
-                    <div class="glass-panel project-card bento-item ${spanClass} animate-fade-in" style="animation-delay: ${0.1 * i}s; padding: ${isHero ? '60px' : '40px'};">
-                        <div style="display: flex; flex-direction: ${isHero ? 'row' : 'column'}; gap: ${isHero ? '60px' : '32px'}; height: 100%;">
-                            <div class="image-reveal" style="flex: ${isHero ? '1.4' : 'none'}; height: ${isHero ? '480px' : '240px'};">
-                                <img src="${p.image}" alt="${p.title}" class="project-image">
-                            </div>
-                            <div style="flex: 1; display: flex; flex-direction: column; text-align: left;">
-                                <div style="margin-bottom: 24px;">
-                                    <h3 style="font-size: ${isHero ? '42px' : '26px'}; margin-bottom: 16px; color: var(--text-primary); letter-spacing: -0.03em;">${p.title}</h3>
-                                    <p style="color: var(--text-secondary); font-size: ${isHero ? '18px' : '15px'}; line-height: 1.7; margin-bottom: 32px; max-width: 550px;">${p.description}</p>
-                                </div>
-                                <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 40px;">
-                                    ${p.tech.map(t => `<span class="tech-tag">${t}</span>`).join('')}
-                                </div>
-                                <a href="${p.link}" class="explore-btn">
-                                    ${isHero ? 'View Full Case Study' : 'Explore Detailed Project'}
-                                    <i data-lucide="arrow-right" style="width: 20px;"></i>
-                                </a>
-                            </div>
+                    <article class="group relative flex flex-col md:flex-row bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-[0_4px_20px_rgb(0,0,0,0.03)] hover:shadow-[0_12px_40px_rgb(0,0,0,0.1)] transition-all duration-500 hover:-translate-y-1 animate-fade-in" style="animation-delay: ${0.1 * i}s; opacity: 0; animation-fill-mode: forwards;">
+                        <!-- Image Container - Horizontal layout on MD+ -->
+                        <div class="relative w-full md:w-2/5 md:min-w-[400px] overflow-hidden bg-slate-100 h-64 md:h-auto">
+                            <div class="absolute inset-0 bg-slate-200 animate-pulse group-hover:hidden"></div>
+                            <img src="${p.image}" alt="${p.title}" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" loading="lazy">
                         </div>
-                    </div>
+                        
+                        <!-- Content -->
+                        <div class="flex flex-col flex-grow p-8 md:p-10 justify-center">
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                ${p.tech.map(t => `
+                                    <span class="px-3 py-1 text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 rounded-full border border-blue-100 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
+                                        ${t}
+                                    </span>
+                                `).join('')}
+                            </div>
+                            
+                            <h3 class="text-3xl font-bold text-slate-900 mb-4 group-hover:text-blue-600 transition-colors duration-300">
+                                ${p.title}
+                            </h3>
+                            
+                            <p class="text-slate-500 text-lg leading-relaxed mb-8 max-w-2xl">
+                                ${p.description}
+                            </p>
+                            
+                            <a href="${p.link}" class="inline-flex items-center gap-2 text-base font-bold text-slate-900 hover:text-blue-600 transition-all group/link self-start">
+                                Explore Project
+                                <div class="bg-slate-100 p-1.5 rounded-full group-hover/link:bg-blue-50 group-hover/link:text-blue-600 transition-colors">
+                                    <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover/link:translate-x-1"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </article>
                 `}).join('');
 
                 lucide.createIcons();
